@@ -73,7 +73,22 @@ def separate_0_1(arr):
             right -= 1
 
 
-def separate_0_1_2(arr):
+def sort_0_1(arr):
+    if arr is None:
+        return
+    left = 0
+    right = len(arr) - 1
+
+    while left < right:
+        while arr[left] == 0:
+            left += 1
+        while arr[right] == 1:
+            right -= 1
+        if left < right:
+            arr[left], arr[right] = arr[right], arr[left]
+
+
+def sort_0_1_2(arr):
     left = 0
     right = len(arr) - 1
     mid = 0
@@ -98,8 +113,12 @@ def main():
     separate_0_1(arr)
     print(arr)
 
+    arr = [0, 1, 0, 1, 1, 1, 0, 0]
+    sort_0_1(arr)
+    print(arr)
+
     arr = [0, 1, 2, 1, 1, 1, 1, 2, 2, 2, 1, 1, 0]
-    separate_0_1_2(arr)
+    sort_0_1_2(arr)
     print(arr)
 
 
