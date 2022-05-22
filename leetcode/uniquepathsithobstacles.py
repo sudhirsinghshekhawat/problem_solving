@@ -26,7 +26,7 @@ class Solution:
                 else:
                     obstacleGrid[i][j] = 0
 
-        return obstacleGrid[m-1][n-1]
+        return obstacleGrid[m-1][n-1]       
 
 
 if __name__ == '__main__':
