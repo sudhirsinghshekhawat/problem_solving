@@ -3,6 +3,7 @@ from typing import List
 
 """
 Class for finding the anagrams
+finding the group of anagrams 
 """
 class Solution:
     def findAnagrams(self, s: str, p: str) -> List[int]:
