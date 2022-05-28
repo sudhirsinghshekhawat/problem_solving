@@ -1,3 +1,8 @@
+"""
+this will solve the problem for counting number of bits
+"""
+
+
 class NoOf1Bits:
     def no_of_1_bits(self, n: int) -> int:
         sum = 0
