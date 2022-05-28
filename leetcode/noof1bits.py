@@ -5,6 +5,9 @@ this will solve the problem for counting number of bits
 
 class NoOf1Bits:
     def no_of_1_bits(self, n: int) -> int:
+        """
+        counting number of bits using bitwise add
+        """
         sum = 0
         while n != 0:
             sum += 1
