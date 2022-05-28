@@ -1,7 +1,9 @@
 from collections import Counter
 from typing import List
 
-
+"""
+Class for finding the anagrams
+"""
 class Solution:
     def findAnagrams(self, s: str, p: str) -> List[int]:
         ns, np = len(s), len(p)
