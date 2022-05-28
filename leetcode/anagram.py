@@ -7,6 +7,9 @@ finding the group of anagrams
 """
 class Solution:
     def findAnagrams(self, s: str, p: str) -> List[int]:
+        """
+        function for finding anagrams
+        """
         ns, np = len(s), len(p)
         if ns < np:
             return []
