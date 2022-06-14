@@ -19,7 +19,11 @@ class Solution:
 
 class TestSolution:
 
-    @pytest.mark.parametrize("word1,word2,output", [("sea", "eat", 2), ("leetcode", "etco", 4)])
-    def test_min_distance(self, word1, word2, output):
+    @pytest.fixture
+    def solution_object(self):
         solution = Solution()
-        assert output == solution.min_distance(word1, word2)
+        return solution
+
+    @pytest.mark.parametrize("word1,word2,output", [("sea", "eat", 2), ("leetcode", "etco", 4)])
+    def test_min_distance(self, word1, word2, output, solution_object):
+        assert output == solution_object.min_distance(word1, word2)
