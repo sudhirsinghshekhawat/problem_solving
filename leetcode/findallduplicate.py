@@ -1,5 +1,7 @@
 from typing import List
 
+from _pytest.fixtures import fixture
+
 
 class Solution:
     def findDuplicates(self, nums: List[int]) -> List[int]:
@@ -20,6 +22,27 @@ class Solution:
             if nums_arr[num] > 0:
                 result.append(num)
         return result
+
+    def find_duplicates(self, nums: List[int]) -> int:
+        unique_numbers = set()
+        for num in nums:
+            if num in unique_numbers:
+                return num
+            unique_numbers.add(num)
+
+
+class TestSolutions:
+
+    @fixture
+    def nums(self):
+        return [1, 2, 3, 4, 3]
+
+    @fixture
+    def solution(self):
+        return Solution()
+
+    def test_find_duplicates(self, solution, nums):
+        assert 3 == solution.find_duplicates(nums)
 
 
 if __name__ == '__main__':
