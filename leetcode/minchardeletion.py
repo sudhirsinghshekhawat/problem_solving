@@ -1,17 +1,20 @@
+"""
+Input: s = "aab"
+Output: 0
+
+Input: s = "aaabbbcc"
+Output: 2
+"""
+import pytest
+
+
 def min_char_deletion(string):
     frequency_count = {}
-    pq = []
     deletion_count = 0
 
-    for i in range(len(string)):
-        frequency_count[string[i]] = frequency_count.get(string[i], 0) + 1
-
-    c = list(frequency_count.values())
-    print(c)
-
-    for ch in frequency_count:
-        pq.append(frequency_count[ch])
-
+    for ch in string:
+        frequency_count[ch] = frequency_count.get(ch, 0) + 1
+    pq = list(frequency_count.values())
     pq.sort()
 
     while pq:
@@ -26,6 +29,7 @@ def min_char_deletion(string):
     return deletion_count
 
 
-if __name__ == '__main__':
-    str = "abbbcccd"
-    print(min_char_deletion(str))
+@pytest.mark.parametrize("input,output", [("aab", 0), ("aaabbbcc", 2)])
+def test_min_char_deletion(input, output):
+    assert output == min_char_deletion(input)
+    ...
